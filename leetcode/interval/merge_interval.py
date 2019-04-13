@@ -4,12 +4,13 @@ from leetcode.interval.interval import Interval
 class Solution(object):
 
     def merge(self, intervals):
-        if len(intervals) <= 1:
-            return intervals
         """
         :type intervals: List[Interval]
         :rtype: List[Interval]
         """
+        if len(intervals) <= 1:
+            return intervals
+
         def overlap(l1, l2):
             """
             :type l1: Interval
