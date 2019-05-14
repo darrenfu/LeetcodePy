@@ -29,6 +29,7 @@ class Solution(object):
             for _ in range(len(q)):
                 w = q.popleft()
                 if w == endWord:
+                    # print(levels)
                     return levels
                 for i in range(len(w)):
                     neighbors = dct[get_word_with_one_star(w, i)]
@@ -37,3 +38,6 @@ class Solution(object):
                             visited.add(w2)
                             q.append(w2)
         return 0
+
+if __name__ == "__main__":
+    Solution().ladderLength('hot', 'igt', ['hit', 'iot'])
