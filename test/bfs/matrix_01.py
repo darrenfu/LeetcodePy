@@ -1,6 +1,6 @@
 import unittest
 
-from leetcode.bfs.matrix_01 import Solution
+from leetcode.bfs_dfs.matrix_01 import Solution
 
 
 class TestSolution(unittest.TestCase):

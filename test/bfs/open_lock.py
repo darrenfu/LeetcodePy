@@ -1,6 +1,6 @@
 import unittest
 
-from leetcode.bfs.open_lock import Solution
+from leetcode.bfs_dfs.open_lock import Solution
 
 
 class TestSolution(unittest.TestCase):
