@@ -11,18 +11,18 @@ class BinaryIndexTree(object):
             self.M = len(matrix)
             self.N = len(matrix[0])
         # skip index 0 as dummy placeholder
-        self.matrix = [[0] * (self.N + 1) for _ in range(self.M + 1)]
+        self.matrix = [[0] * self.N for _ in range(self.M)]
         self.sums = [[0] * (self.N + 1) for _ in range(self.M + 1)]
         for i in range(self.M):
             for j in range(self.N):
-                self.set(i+1, j+1, matrix[i][j])
+                self.set(i, j, matrix[i][j])
 
     def set(self, r: int, c: int, val: int) -> None:
         diff = val - self.matrix[r][c]
         self.matrix[r][c] = val
-        i = r
+        i = r+1
         while i < self.M+1:
-            j = c
+            j = c+1
             while j < self.N+1:
                 self.sums[i][j] += diff
                 j += BinaryIndexTree._lowbit(j)  # go to child node
@@ -30,9 +30,9 @@ class BinaryIndexTree(object):
 
     def get(self, r: int, c: int) -> int:
         ret = 0
-        i = r
+        i = r+1
         while i > 0:
-            j = c
+            j = c+1
             while j > 0:
                 ret += self.sums[i][j]
                 j -= BinaryIndexTree._lowbit(j)  # go to parent node
@@ -50,11 +50,11 @@ class NumMatrix:
         self.bit = BinaryIndexTree(matrix)
 
     def update(self, row: int, col: int, val: int) -> None:
-        self.bit.set(row + 1, col + 1, val)
+        self.bit.set(row, col, val)
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
-        return self.bit.get(row2 + 1, col2 + 1) + self.bit.get(row1, col1) - \
-               self.bit.get(row2 + 1, col1) - self.bit.get(row1, col2 + 1)
+        return self.bit.get(row2, col2) + self.bit.get(row1-1, col1-1) - \
+               self.bit.get(row2, col1-1) - self.bit.get(row1-1, col2)
 
 
 # Your NumMatrix object will be instantiated and called as such:
