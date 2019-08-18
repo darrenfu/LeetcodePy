@@ -1,4 +1,4 @@
-from leetcode.design.dlinkedlist import DLinkedList, Node
+from leetcode.design import DLinkedList, Node
 import collections
 
 

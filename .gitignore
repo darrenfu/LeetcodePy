@@ -1,4 +1,18 @@
 .idea/
-*.iml
+.vscode/
 venv*/
 **/__pycache__/
+*.class
+*.iml
+target
+dist
+*.DS_Store
+*.versionsBackup
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.project
+*.classpath
+*.settings

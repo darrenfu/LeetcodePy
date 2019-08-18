@@ -2,9 +2,6 @@ from typing import List
 
 
 class Solution:
-    """
-    TLE
-    """
     def largest1BorderedSquare(self, grid: List[List[int]]) -> int:
         R, C = len(grid), len(grid[0])
         ivisited = dict()

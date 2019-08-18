@@ -1,6 +1,3 @@
-from leetcode.interval.interval import Interval
-
-
 class Solution(object):
     def insert(self, intervals, newInterval):
         """

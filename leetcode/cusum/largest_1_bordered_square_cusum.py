@@ -4,8 +4,6 @@ from typing import List
 class Solution:
     """
     Runtime: 256 ms
-    T: O(N^3)
-    S: O(MN)
     https://leetcode.com/problems/largest-1-bordered-square/discuss/345233/JavaC%2B%2BPython-Straight-Forward
     """
     def largest1BorderedSquare(self, grid: List[List[int]]) -> int:
