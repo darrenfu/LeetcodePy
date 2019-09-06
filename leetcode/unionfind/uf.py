@@ -4,8 +4,8 @@ from typing import List
 class UF:
     def __init__(self, n: int, count: int = -1):
         # index must start from 0
-        self.parents: List[int] = [i for i in range(n)]
-        self.count: int = n if count == -1 else count
+        self.parents = [i for i in range(n)]
+        self.count = n if count == -1 else count
 
     def find(self, i: int) -> int:
         if self.parents[i] != i:  # i is not root
@@ -27,7 +27,7 @@ class UF:
         :return:
         """
         N, max_val = len(self.parents), 0
-        counts: List[int] = [0] * N
+        counts = [0] * N
         for i in range(N):
             root = self.find(i)
             # if nodes are sharing the root node, count[root]++

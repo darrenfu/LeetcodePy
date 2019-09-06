@@ -27,6 +27,7 @@ We often encounter some algorithms in leetcode problems.
 1. Kadane’s algorithm (DP approach to solve the largest contiguous elements in an array)
 1. Dijkstra’s Algorithm
 1. Kruskal’s Algorithm
+1. Kahn's Algorithm for Topological sorting  
 1. SLR(1) (Hard)  
 *Leetcode problems*:
     * [282. Expression Add Operators](https://leetcode.com/problems/expression-add-operators/discuss/71975/Some-thoughts-on-the-algorithm%3A-SLR(1)-and-optimization%3A-meet-in-the-middle-(-spatial-data-structure))

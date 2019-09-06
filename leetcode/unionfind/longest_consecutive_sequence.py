@@ -1,5 +1,5 @@
 from typing import List, Dict
-from src.main.python import UF
+from leetcode.unionfind.uf import UF
 
 
 class Solution:
