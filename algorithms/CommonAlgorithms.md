@@ -24,9 +24,10 @@ We often encounter some algorithms in leetcode problems.
 1. Link Analysis  
 1. Lee algorithm (Maze router based on BFS)
 1. Floyd Warshall Algorithm (finding shortest paths)
-1. Kadane’s algorithm (DP approach to solve the largest contiguous elements in an array)
-1. Dijkstra’s Algorithm
-1. Kruskal’s Algorithm
+1. Kadane's algorithm (DP approach to solve the largest contiguous elements in an array)
+1. Tarjan's algorithm (find strongly connected components in a graph)
+1. Dijkstra's Algorithm
+1. Kruskal's Algorithm
 1. Kahn's Algorithm for Topological sorting  
 1. SLR(1) (Hard)  
 *Leetcode problems*:

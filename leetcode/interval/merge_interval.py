@@ -1,4 +1,4 @@
-from src.main.python import Interval
+from leetcode.interval.interval import Interval
 
 
 class Solution(object):
