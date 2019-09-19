@@ -16,7 +16,7 @@ class BinaryIndexTree(object):
         diff = val - self.nums[i]
         self.nums[i] = val
         while i < self.N + 1:
-            self.sums[i] += diff
+            self.sums[i] += diff  # add diff to each node itself and all its descendants
             i += BinaryIndexTree._lowbit(i)  # go to child node
 
     def get(self, i: int) -> int:
