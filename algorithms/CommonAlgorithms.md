@@ -5,8 +5,6 @@ We often encounter some algorithms in leetcode problems.
 1. Boyer-Moore Majority Vote algorithm  
 *Use case*: Find the majority element in a list of values.  
 [Great article](https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html) to explain it.  
-*Time complexity*: O(N)  
-*Leetcode problems*:  
     * [169. Majority Element](https://leetcode.com/problems/majority-element/)
     * [229. Majority Element II](https://leetcode.com/problems/majority-element-ii/)
     * [1150. Check If a Number Is Majority Element in a Sorted Array](https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/)
@@ -32,5 +30,10 @@ We often encounter some algorithms in leetcode problems.
     * [1203. Sort items by groups respecting dependencies]
 1. Tarjan's algorithm (find strongly connected components in a graph)
 1. SLR(1) (Hard)  
-*Leetcode problems*:
     * [282. Expression Add Operators](https://leetcode.com/problems/expression-add-operators/discuss/71975/Some-thoughts-on-the-algorithm%3A-SLR(1)-and-optimization%3A-meet-in-the-middle-(-spatial-data-structure))
+1. DFA - Deterministic Finite Automaton  
+    * [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)
+    * [65. Valid Number](https://leetcode.com/problems/valid-number)
+1. Round Robin
+
+For leetcode problems and solutions, some (in-progress) are described in jupyter notebook. You can browse them via [Jupyter nbviewer](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/)
