@@ -23,7 +23,7 @@ Use case: Find the majority element in a list of values. Check this [article](ht
 1. Lee algorithm (Maze router based on BFS)
 1. Floyd Warshall Algorithm (finding shortest paths)
 1. Kadane's algorithm (DP approach to solve the largest contiguous elements in an array)
-    * [1186. Maximum Subarray Sum with One Deletion](https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/discuss/377373/Python-solution-with-Explanation-using-2-variables)
+    * [1186. Maximum Subarray Sum with One Deletion](jupyter-notebook/1186.maximum-subarray-sum-with-one-deletion.ipynb)
     * [1191. K-Concatenation Maximum Sum](https://leetcode.com/problems/k-concatenation-maximum-sum/)
 1. Dijkstra's Algorithm
 1. Kruskal's Algorithm
@@ -43,6 +43,7 @@ Use case: Find the majority element in a list of values. Check this [article](ht
         * [349. Intersection of Two Arrays](https://www.cnblogs.com/grandyang/p/5507129.html)
         * [350. Intersection of Two Arrays II](https://www.cnblogs.com/grandyang/p/5533305.html)
     1. Search for position to insert
+        * [Patience Sorting](http://wordaligned.org/articles/patience-sort)
         * [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
         * [354. Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/discuss/183277/Python-6-lines-bisect-solution)
         * [363. Max Sum of Rectangle No Larger Than K](https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/discuss/83599/Accepted-C%2B%2B-codes-with-explanation-and-references)
