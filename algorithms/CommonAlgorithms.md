@@ -3,7 +3,46 @@
 For some leetcode solutions in Python3, I reconcile them in jupyter notebook (still in progress). Check out my [Jupyter nbviewer](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/)
 
 Here lists some common algorithms to deal with classic leetcode problems.
-
+1. Interval Scheduling   
+    * [56. Merge Intervals]()
+    * [57. Insert Interval]()
+    * [252. Meeting Rooms]()
+    * [253. Meeting Rooms II]()
+    * [352. Data Stream as Disjoint Intervals]()
+    * [435. Non-overlapping Intervals]()
+    * [436. Find Right Interval]()
+    * [452. Minimum Number of Arrows to Burst Balloons]()
+    * [616. Add Bold Tag in String]()
+    * [636. Exclusive Time of Functions]()
+    * [646. Maximum Length of Pair Chain]()
+    * [699. Falling Squares]()
+    * [715. Range Module]()
+    * [759. Employee Free Time]()
+    * [986. Interval List Intersections]()
+    * [1235. Maximum Profit in Job Scheduling]()
+1. Binary Search
+    1. Search for exact match
+        * [349. Intersection of Two Arrays](../jupyter-notebook/0349.intersection-of-two-arrays.ipynb)
+        * [350. Intersection of Two Arrays II](../jupyter-notebook/0350.intersection-of-two-arrays-ii.ipynb)
+    1. Search for position to insert
+        * [Patience Sorting](http://wordaligned.org/articles/patience-sort)
+        * [300. Longest Increasing Subsequence](../jupyter-notebook/0300.longest-increasing-subsequence.ipynb)
+        * [354. Russian Doll Envelopes](../jupyter-notebook/0354.russian-doll-envelopes.ipynb)
+        * [363. Max Sum of Rectangle No Larger Than K](../jupyter-notebook/0363.max-sum-of-rectangle-no-larger-than-k.ipynb)
+        * [367. Valid Perfect Square](../jupyter-notebook/0367.valid-perfect-square.ipynb)
+        * [441. Arranging Coins](../jupyter-notebook/0441.arranging-coins.ipynb)
+        * [475. Heaters](../jupyter-notebook/0475.heaters.ipynb)
+        * [611. Valid Triangle Number](../jupyter-notebook/0611.valid-triangle-number.ipynb)
+    1. Sub-function (hard)
+        * [410. Split Array Largest Sum](../jupyter-notebook/0410.split-array-largest-sum.ipynb)
+        * [774. Minimize Max Distance to Gas Station](../jupyter-notebook/0774.minimize-max-distance-to-gas-station.ipynb)
+        * [875. Koko Eating Bananas](../jupyter-notebook/0875.koko-eating-bananas.ipynb)
+        * [1011. Capacity To Ship Packages In N Days](../jupyter-notebook/1011.capacity-to-ship-packages-within-d-days.ipynb)
+        * [1231. Divide Chocolate](../jupyter-notebook/1231.divide-chocolate.ipynb)
+1. Sliding window (hard)
+    * [904. Fruit Into Baskets](../jupyter-notebook/0904.fruit-into-baskets.ipynb)
+    * [992. Subarrays with K Different Integers](../jupyter-notebook/0992.subarrays-with-k-different-integers.ipynb)
+    * [1234. Replace the Substring for Balanced String](../jupyter-notebook/1234.replace-the-substring-for-balanced-string.ipynb)
 1. Boyer-Moore Majority Vote algorithm  
 Use case: Find the majority element in a list of values. Check this [article](https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html).  
     * [169. Majority Element](../jupyter-notebook/0169.majority-element.ipynb)
@@ -28,8 +67,8 @@ Use case: Find the majority element in a list of values. Check this [article](ht
 1. Dijkstra's Algorithm
 1. Kruskal's Algorithm
 1. Kahn's Algorithm for Topological sorting  
-    * [207. Course Scheduling](../jupyter-notebook/207.course-schedule.ipynb)
-    * [1203. Sort items by groups respecting dependencies](../jupyter-notebook/sort-items-by-groups-respecting-dependencies.ipynb)
+    * [207. Course Scheduling](../jupyter-notebook/0207.course-schedule.ipynb)
+    * [1203. Sort items by groups respecting dependencies](../jupyter-notebook/1203.sort-items-by-groups-respecting-dependencies.ipynb)
 1. Tarjan's algorithm (find strongly connected components in a graph)
 1. SLR(1) (Hard)  
     * [282. Expression Add Operators](../jupyter-notebook/0282.expression-add-operators.ipynb)
@@ -38,27 +77,3 @@ Use case: Find the majority element in a list of values. Check this [article](ht
     * [65. Valid Number](../jupyter-notebook/0065.valid-number.ipynb)
 1. Round Robin
     * [68. Text Justification](../jupyter-notebook/0068.text-justification.ipynb)
-1. Binary Search
-    1. Search for exact match
-        * [349. Intersection of Two Arrays](./jupyter-notebook/0349.intersection-of-two-arrays.ipynb)
-        * [350. Intersection of Two Arrays II](./jupyter-notebook/0350.intersection-of-two-arrays-ii.ipynb)
-    1. Search for position to insert
-        * [Patience Sorting](http://wordaligned.org/articles/patience-sort)
-        * [300. Longest Increasing Subsequence](../jupyter-notebook/0300.longest-increasing-subsequence.ipynb)
-        * [354. Russian Doll Envelopes](../jupyter-notebook/0354.russian-doll-envelopes.ipynb)
-        * [363. Max Sum of Rectangle No Larger Than K](../jupyter-notebook/0363.max-sum-of-rectangle-no-larger-than-k.ipynb)
-        * [367. Valid Perfect Square](../jupyter-notebook/0367.valid-perfect-square.ipynb)
-        * [441. Arranging Coins](../jupyter-notebook/0441.arranging-coins.ipynb)
-        * [475. Heaters](../jupyter-notebook/0475.heaters.ipynb)
-        * [611. Valid Triangle Number](../jupyter-notebook/0611.valid-triangle-number.ipynb)
-    1. Sub-function (hard)
-        * [410. Split Array Largest Sum](../jupyter-notebook/0410.split-array-largest-sum.ipynb)
-        * [774. Minimize Max Distance to Gas Station](../jupyter-notebook/0774.minimize-max-distance-to-gas-station.ipynb)
-        * [875. Koko Eating Bananas](../jupyter-notebook/0875.koko-eating-bananas.ipynb)
-        * [1011. Capacity To Ship Packages In N Days](../jupyter-notebook/1011.capacity-to-ship-packages-within-d-days.ipynb)
-        * [1231. Divide Chocolate](../jupyter-notebook/1231.divide-chocolate.ipynb)
-1. Sliding window (hard)
-    * [904. Fruit Into Baskets](../jupyter-notebook/0904.fruit-into-baskets.ipynb)
-    * [992. Subarrays with K Different Integers](../jupyter-notebook/0992.subarrays-with-k-different-integers.ipynb)
-    * [1234. Replace the Substring for Balanced String](../jupyter-notebook/1234.replace-the-substring-for-balanced-string.ipynb)
-   
