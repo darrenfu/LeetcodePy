@@ -52,6 +52,7 @@ Use case: Find the majority element in a list of values. Check this [article](ht
 1. Reservoir Sampling  
 1. Floyd's Cycle Detection Algorithm (tortoise and the hare algorithm)
 1. Euler Path (Hierholzer's algorithm)
+    * [332. Reconstruct Itinerary](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0332.reconstruct-itinerary.ipynb)
 1. Morris Tree Traversal
 1. Binary Indexed Tree (Fenwick Tree) / Segment Tree 
 1. Disjoint Sets (Union Find)
