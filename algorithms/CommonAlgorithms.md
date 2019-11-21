@@ -63,6 +63,8 @@ Use case: Find the majority element in a list of values. Check this [article](ht
 1. Lee algorithm (Maze router based on BFS)
 1. Floyd Warshall Algorithm (finding shortest paths)
 1. Kadane's algorithm (DP approach to solve the largest contiguous elements in an array)
+    * [53. Maximum Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0053.maximum-subarray.ipynb)
+    * [978. Longest Turbulent Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0978.longest-turbulent-subarray.ipynb)
     * [1186. Maximum Subarray Sum with One Deletion](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1186.maximum-subarray-sum-with-one-deletion.ipynb)
     * [1191. K-Concatenation Maximum Sum](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1191.k-concatenation-maximum-sum.ipynb)
 1. Dijkstra's Algorithm
@@ -78,3 +80,24 @@ Use case: Find the majority element in a list of values. Check this [article](ht
     * [65. Valid Number](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0065.valid-number.ipynb)
 1. Round Robin
     * [68. Text Justification](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0068.text-justification.ipynb)
+1. Permutations and Combinations
+    * [46. Permutations](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0046.permutations.ipynb)
+    * [47. Permutations II](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0047.permutations-ii.ipynb)
+    * [60. Permutation Sequence](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0060.permutation-sequence.ipynb)
+    * [78. Subsets](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0078.subsets.ipynb)
+    * [90. Subsets II](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0090.subsets-ii.ipynb)
+    * [1255. Maximum Score Words Formed by Letters](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1255.maximum-score-words-formed-by-letters.ipynb)
+1. Post-order Traversal Tree Problems
+    * [124. Binary Tree Maximum Path Sum](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0124.binary-tree-maximum-path-sum.ipynb)
+    * [250. Count Univalue Subtrees](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0250.count-univalue-subtrees.ipynb)
+    * [298. Binary Tree Longest Consecutive Sequence](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0298.binary-tree-longest-consecutive-sequence.ipynb)
+    * [508. Most Frequent Subtree Sum](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0508.most-frequent-subtree-sum.ipynb)
+    * [543. Diameter of Binary Tree](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0543.diameter-of-binary-tree.ipynb)
+    * [549. Binary Tree Longest Consecutive Sequence II](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0549.binary-tree-longest-consecutive-sequence-ii.ipynb)
+    * [687. Longest Univalue Path](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0687.longest-univalue-path.ipynb)
+    * [1245. Tree Diameter](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1245.tree-diameter.ipynb)
+    * [Max Path Sum in a Grid](https://leetcode.com/discuss/interview-question/391278/google-phone-screen-maximal-path-sum/351744)
+1. Sieve of Eratosthenes
+    * [204. Count Primes](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0204.count-primes.ipynb)
+    * [Number which has the maximum number of distinct prime factors in the range M to N](https://www.geeksforgeeks.org/number-which-has-the-maximum-number-of-distinct-prime-factors-in-range-m-to-n/)
+    * [Maximum number of unique prime factors](https://www.geeksforgeeks.org/maximum-number-unique-prime-factors/)
