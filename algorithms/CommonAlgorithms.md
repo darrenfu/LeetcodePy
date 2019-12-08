@@ -3,7 +3,7 @@
 For some leetcode solutions in Python3, I reconcile them in jupyter notebook (still in progress). Check out my [Jupyter nbviewer](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/)
 
 Here lists some common algorithms to deal with classic leetcode problems.
-1. Interval Scheduling   
+1. Interval Scheduling (Greedy or Boundary Counting)
     * [56. Merge Intervals]()
     * [57. Insert Interval]()
     * [252. Meeting Rooms]()
@@ -17,6 +17,9 @@ Here lists some common algorithms to deal with classic leetcode problems.
     * [646. Maximum Length of Pair Chain]()
     * [699. Falling Squares]()
     * [715. Range Module]()
+    * [729. My Calendar I]()
+    * [731. My Calendar II]()
+    * [732. My Calendar III]()
     * [759. Employee Free Time]()
     * [986. Interval List Intersections]()
     * [1235. Maximum Profit in Job Scheduling]()
