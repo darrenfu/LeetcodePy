@@ -42,12 +42,20 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
 
 ### Graph  
 1. Disjoint Sets (Union Find)
+    * [200. Number of Islands]()
+    * [947. Most Stones Removed with Same Row or Column]()
 1. Shortest Paths Problems
-    * Dijkstra's
+    * Dijkstra
     * Floyd-Warshall
     * Bellman-Ford
     * BFS
+        * [994. Rotting Oranges]()
         * [1162. As Far from Land as Possible]()
+    * Bidirectional/Multisource BFS
+        * [127. Word Ladder]()
+        * [126. Word Ladder II]()
+        * [433. Minimum Genetic Mutation]()
+        * [317. Shortest Distance from All Buildings]() - Multisource BFS
 1. Kahn's Algorithm - Topological sorting  
     * [207. Course Scheduling](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0207.course-schedule.ipynb)
     * [310. Minimum Height Trees]()
@@ -59,7 +67,7 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [1059. All Paths from Source Lead to Destination]()
     * Floyd's Tortoise and Hare
 1. Tarjan's algorithm  
-   find strongly connected components (SCC)  
+   Strongly Connected Components (SCC)  
    * [928. Minimize Malware Spread II]()
    * [1192. Critical Connections in a Network]()
 1. Kruskal's Algorithm
@@ -85,17 +93,40 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
     1. Complete Knapsack 
         * [279. Perfect Squares](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0279.perfect-squares.ipynb)
         * [322. Coin Change](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0322.coin-change.ipynb)
+        * [377. Combination Sum IV]()
         * [518. Coin Change 2](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0518.coin-change-2.ipynb)
 1. Kadane's algorithm (DP approach to solve the largest contiguous elements in an array)
     * [53. Maximum Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0053.maximum-subarray.ipynb)
     * [978. Longest Turbulent Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0978.longest-turbulent-subarray.ipynb)
     * [1186. Maximum Subarray Sum with One Deletion](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1186.maximum-subarray-sum-with-one-deletion.ipynb)
     * [1191. K-Concatenation Maximum Sum](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1191.k-concatenation-maximum-sum.ipynb)
-
-### String
-1. ?
-    * []()
-1. ?
+1. Two-dimensional DP
+    * LIS series
+        * [300. Longest Increasing Subsequence]()
+        * [491. Increasing Subsequences]()
+    * LCS series
+        * [1143. Longest Common Subsequence]()
+        * [1092. Shortest Common Supersequence]() - SCS
+        * [516. Longest Palindromic Subsequence]()
+        * [1216. Valid Palindrome III]()
+        * [72. Edit Distance]()
+        * [673. Number of Longest Increasing Subsequence]()
+    * Palindromic Substring
+        **Other Solution**: Middle-to-two-ends / Manacher  
+        * [5. Longest Palindromic Substring]()
+        * [214. Shortest Palindrome]()
+        * [647. Palindromic Substrings]()
+1. [Game Theory](https://leetcode.com/tag/minimax/)
+    **Other Solution**: MinMax
+    * [292. Nim Game]()
+    * [464. Can I Win]()
+    * [486. Predict the Winner]()
+    * [1025. Divisor Game]()
+    * [877. Stone Game]()
+    * [1140. Stone Game II]()
+    * [5 Pirates and 100 Gold Coins](https://www.geeksforgeeks.org/puzzle-20-5-pirates-and-100-gold-coins/)
+    * [LintCode 394. Coins in a Line](https://www.lintcode.com/problem/coins-in-a-line/description)
+    * [LintCode 395. Coins in a Line II](https://www.lintcode.com/problem/coins-in-a-line-ii/description)
 
 ### Misc  
 1. Interval Scheduling  
@@ -134,9 +165,15 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [159. Longest Substring with At Most Two Distinct Characters]()
         * [340. Longest Substring with At Most K Distinct Characters]()
         * [438. Find All Anagrams in a String]()
-1. Monotonic stack
-    * [581. Shortest Unsorted Continuous Subarray]()
-    * [739. Daily Temperatures]()
+1. Stack
+    1. Monotonic stack
+        * [581. Shortest Unsorted Continuous Subarray]()
+        * [739. Daily Temperatures]()
+    1. RPN (Reversed Polish Notation)
+        * [224. Basic Calculator]()
+        * [227. Basic Calculator II]()
+        * [772. Basic Calculator III]()
+        * [770. Basic Calculator IV]() - Hard
 1. Sieve of Eratosthenes
     * [204. Count Primes](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0204.count-primes.ipynb)
     * [Number which has the maximum number of distinct prime factors in the range M to N](https://www.geeksforgeeks.org/number-which-has-the-maximum-number-of-distinct-prime-factors-in-range-m-to-n/)
@@ -158,3 +195,12 @@ Use case: Find the majority element in a list of values. Check this [article](ht
     * [229. Majority Element II](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0229.majority-element-ii.ipynb)
     * [1150. Check If a Number Is Majority Element in a Sorted Array](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1150.check-if-a-number-is-majority-element-in-a-sorted-array.ipynb)
     * [1157. Online Majority Element In Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1157.online-majority-element-in-subarray.ipynb)
+
+### Tricky Solutions  
+    * [65. Valid Number]() - DFA
+    * [136. Single Number]() - XOR
+    * [240. Search a 2D Matrix II]() - Start from Right-top Corner
+
+### String
+1. TBD
+
