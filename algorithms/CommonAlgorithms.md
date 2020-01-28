@@ -132,13 +132,13 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
 1. Interval Scheduling  
    **Solution**: Greedy / Boundary Counting
     * [56. Merge Intervals]()
-    * [57. Insert Interval]()
     * [252. Meeting Rooms]()
     * [253. Meeting Rooms II]()
-    * [352. Data Stream as Disjoint Intervals]()
     * [435. Non-overlapping Intervals]()
-    * [436. Find Right Interval]()
     * [452. Minimum Number of Arrows to Burst Balloons]()
+    * [57. Insert Interval]()
+    * [352. Data Stream as Disjoint Intervals]()
+    * [436. Find Right Interval]()
     * [616. Add Bold Tag in String]()
     * [636. Exclusive Time of Functions]()
     * [646. Maximum Length of Pair Chain]()
@@ -174,6 +174,16 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [227. Basic Calculator II]()
         * [772. Basic Calculator III]()
         * [770. Basic Calculator IV]() - Hard
+    1. Good stack problems
+        * [42. Trapping Rain Water]()
+        * [84. Largest Rectangle in Histogram]()
+        * [496. Next Greater Element I]()
+        * [503. Next Greater Element II]()
+        * [636. Exclusive Time of Functions]()
+        * [856. Score of Parentheses]()
+        * [901. Online Stock Span]()
+        * [907. Sum of Subarray Minimums]()
+        * [1130. Minimum Cost Tree From Leaf Values]()
 1. Sieve of Eratosthenes
     * [204. Count Primes](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0204.count-primes.ipynb)
     * [Number which has the maximum number of distinct prime factors in the range M to N](https://www.geeksforgeeks.org/number-which-has-the-maximum-number-of-distinct-prime-factors-in-range-m-to-n/)
