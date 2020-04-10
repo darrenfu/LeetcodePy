@@ -46,16 +46,23 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
     * [947. Most Stones Removed with Same Row or Column]()
 1. Shortest Paths Problems
     * Dijkstra
+        * [787. Cheapest Flights Within K Stops]()
+        * [1162. As Far from Land as Possible]()
     * Floyd-Warshall
     * Bellman-Ford
+    * SPFA
+        * [1162. As Far from Land as Possible]()
     * BFS
+        * [365. Water and Jug Problem]()
         * [994. Rotting Oranges]()
         * [1162. As Far from Land as Possible]()
-    * Bidirectional/Multisource BFS
+    * Bidirectional
         * [127. Word Ladder]()
         * [126. Word Ladder II]()
         * [433. Minimum Genetic Mutation]()
-        * [317. Shortest Distance from All Buildings]() - Multisource BFS
+    * Multisource BFS
+        * [317. Shortest Distance from All Buildings]()
+        * [1162. As Far from Land as Possible]()
 1. Kahn's Algorithm - Topological sorting  
     * [207. Course Scheduling](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0207.course-schedule.ipynb)
     * [310. Minimum Height Trees]()
@@ -66,6 +73,8 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [802. Find Eventual Safe States]()
         * [1059. All Paths from Source Lead to Destination]()
     * Floyd's Tortoise and Hare
+1. DFS
+    * [365. Water and Jug Problem]()
 1. Tarjan's algorithm  
    Strongly Connected Components (SCC)  
    * [928. Minimize Malware Spread II]()
@@ -153,6 +162,8 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
     * [1235. Maximum Profit in Job Scheduling]()
     * [1288. Remove Covered Intervals]() - Boundary Counting doesn't work?
 1. Sliding window
+    * Easy
+        * [643. Maximum Average Subarray I]()
     * Hard
         * [727. Minimum Window Subsequence](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0727.minimum-window-subsequence.ipynb)
         * [904. Fruit Into Baskets](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0904.fruit-into-baskets.ipynb)
@@ -165,8 +176,14 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [159. Longest Substring with At Most Two Distinct Characters]()
         * [340. Longest Substring with At Most K Distinct Characters]()
         * [438. Find All Anagrams in a String]()
+1. PreSum
+    * Easy
+        * [53. Maximum Subarray]()
+        * [643. Maximum Average Subarray I]()
 1. Stack
     1. Monotonic stack
+        * [42. Trapping Rain Water]()
+        * [84. Largest Rectangle in Histogram]()
         * [581. Shortest Unsorted Continuous Subarray]()
         * [739. Daily Temperatures]()
     1. RPN (Reversed Polish Notation)
@@ -175,15 +192,18 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [772. Basic Calculator III]()
         * [770. Basic Calculator IV]() - Hard
     1. Good stack problems
-        * [42. Trapping Rain Water]()
-        * [84. Largest Rectangle in Histogram]()
+        * [388. Longest Absolute File Path]()
         * [496. Next Greater Element I]()
         * [503. Next Greater Element II]()
         * [636. Exclusive Time of Functions]()
         * [856. Score of Parentheses]()
         * [901. Online Stock Span]()
         * [907. Sum of Subarray Minimums]()
+        * [1111. Maximum Nesting Depth of Two Valid Parentheses Strings]()
         * [1130. Minimum Cost Tree From Leaf Values]()
+1. Bit Operation
+    * [137. Single Number II]()
+    * [318. Maximum Product of Word Lengths]()
 1. Sieve of Eratosthenes
     * [204. Count Primes](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0204.count-primes.ipynb)
     * [Number which has the maximum number of distinct prime factors in the range M to N](https://www.geeksforgeeks.org/number-which-has-the-maximum-number-of-distinct-prime-factors-in-range-m-to-n/)
@@ -193,6 +213,11 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
 1. Link Analysis  
 1. Reservoir Sampling  
 1. Boyer-Moore Majority Vote algorithm  
+1. Bézout's identity (GCD)
+    * [365. Water and Jug Problem]()
+    * [1250. Check If It Is a Good Array]()
+1. Euclidean
+    * [780. Reaching Points]()
 1. SLR(1) 
     * [282. Expression Add Operators](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0282.expression-add-operators.ipynb)
 1. DFA - Deterministic Finite Automaton  
