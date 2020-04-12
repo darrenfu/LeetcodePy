@@ -95,7 +95,13 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
     * [90. Subsets II](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0090.subsets-ii.ipynb)
     * [1255. Maximum Score Words Formed by Letters](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1255.maximum-score-words-formed-by-letters.ipynb)
     * [1286. Iterator for Combination](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1286.iterator-for-combination.ipynb)
-1. Knapsack problem
+2. Classic DP
+    * [256. Paint House]()
+    * [265. Paint House II]()
+    * [276. Paint Fence]()
+    * [887. Super Egg Drop]()
+    * [1411. Number of Ways to Paint N × 3 Grid]()
+3. Knapsack problem
     1. 0/1 Knapsack 
         * [416. Partition Equal Subset Sum](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0416.partition-equal-subset-sum.ipynb)
         * [871. Minimum Number of Refueling Stops](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0871.minimum-number-of-refueling-stops.ipynb)
@@ -104,12 +110,12 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [322. Coin Change](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0322.coin-change.ipynb)
         * [377. Combination Sum IV]()
         * [518. Coin Change 2](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0518.coin-change-2.ipynb)
-1. Kadane's algorithm (DP approach to solve the largest contiguous elements in an array)
+4. Kadane's algorithm (DP approach to solve the largest contiguous elements in an array)
     * [53. Maximum Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0053.maximum-subarray.ipynb)
     * [978. Longest Turbulent Subarray](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/0978.longest-turbulent-subarray.ipynb)
     * [1186. Maximum Subarray Sum with One Deletion](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1186.maximum-subarray-sum-with-one-deletion.ipynb)
     * [1191. K-Concatenation Maximum Sum](https://nbviewer.jupyter.org/github/darrenfu/LeetcodePy/tree/master/jupyter-notebook/1191.k-concatenation-maximum-sum.ipynb)
-1. Two-dimensional DP
+5. Two-dimensional DP
     * LIS series
         * [300. Longest Increasing Subsequence]()
         * [491. Increasing Subsequences]()
@@ -125,7 +131,7 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
         * [5. Longest Palindromic Substring]()
         * [214. Shortest Palindrome]()
         * [647. Palindromic Substrings]()
-1. [Game Theory](https://leetcode.com/tag/minimax/)
+6. [Game Theory](https://leetcode.com/tag/minimax/)
     **Other Solution**: MinMax
     * [292. Nim Game]()
     * [464. Can I Win]()
