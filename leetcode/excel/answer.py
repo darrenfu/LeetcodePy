@@ -1,6 +1,7 @@
 import re
 from collections import defaultdict, deque
-from typing import Set, List
+from typing import Set, List, Tuple
+
 # !!! use re.compile(str).match() instead of re.match(PATTERN, str)
 CELL_RE = re.compile(r"^[A-Z]+[1-9][0-9]*$")
 
