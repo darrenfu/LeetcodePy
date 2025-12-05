@@ -1,0 +1,63 @@
+classDiagram
+    class RateLimitStrategy {
+        <<interface>>
+        +configure_user(user_id, **config)
+        +allow(user_id, now)
+    }
+
+    class FixedWindowLimiter {
+        +configure_user(user_id, **config)
+        +allow(user_id, now)
+        -configs
+        -states
+    }
+
+    class SlidingWindowLimiter {
+        +configure_user(user_id, **config)
+        +allow(user_id, now)
+        -configs
+        -events
+    }
+
+    class TokenBucketLimiter {
+        +configure_user(user_id, **config)
+        +allow(user_id, now)
+        -configs
+        -states
+    }
+
+    class RateLimiter {
+        +configure_fixed_window(user_id, limit, window_size)
+        +configure_sliding_window(user_id, limit, window_size)
+        +configure_token_bucket(user_id, capacity, refill_rate)
+        +allow(user_id, now)
+        -fixed_window
+        -sliding_window
+        -token_bucket
+        -user_strategy
+    }
+
+    class RedisTokenBucketLimiter {
+        +allow(user_id, capacity, refill_rate, now)
+        -redis_client
+        -prefix
+        -script
+    }
+
+    class RedisTokenBucketStrategy {
+        +configure_user(user_id, capacity, refill_rate)
+        +allow(user_id, now)
+        -impl
+        -configs
+    }
+
+    RateLimitStrategy <|.. FixedWindowLimiter
+    RateLimitStrategy <|.. SlidingWindowLimiter
+    RateLimitStrategy <|.. TokenBucketLimiter
+    RateLimitStrategy <|.. RedisTokenBucketStrategy
+
+    RateLimiter --> FixedWindowLimiter : uses
+    RateLimiter --> SlidingWindowLimiter : uses
+    RateLimiter --> TokenBucketLimiter : uses
+
+    RedisTokenBucketStrategy --> RedisTokenBucketLimiter : wraps

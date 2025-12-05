@@ -1,0 +1,24 @@
+[
+  {
+    "transform": "scale",
+    "args": [
+      0.75
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": [
+      15
+    ]
+  },
+  {
+    "transform": "blur",
+    "args": [
+      1.5
+    ]
+  },
+  {
+    "transform": "grayscale",
+    "args": []
+  }
+]

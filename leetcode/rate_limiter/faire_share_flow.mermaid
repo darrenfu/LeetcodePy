@@ -1,0 +1,42 @@
+flowchart TB
+subgraph Step1_Config
+A[Define policy
+        weights, priority classes]
+B[Distribute config to
+Fair Share Allocator]
+end
+
+subgraph Step2_Metrics
+C[SR Agent on host
+tracks demand and usage]
+D[SR Agent sends
+metrics to Metrics Store]
+E[Backend emits
+latency and errors]
+end
+
+subgraph Step3_Allocation
+F[Fair Share Allocator
+runs weighted max min]
+G[Compute quotas Q_i
+per tenant]
+H[Push quotas to
+SR Agents]
+end
+
+subgraph Step4_Enforcement
+I[Token bucket per tenant
+at SR Agent]
+J[Allow or throttle
+RPC request]
+end
+
+A --> B
+B --> F
+C --> D
+E --> D
+D --> F
+F --> G
+G --> H
+H --> I
+I --> J

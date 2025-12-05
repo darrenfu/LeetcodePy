@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant Client
+    participant RateLimiter
+    participant Strategy as RateLimitStrategy
+
+    Client->>RateLimiter: allow(user_id, now)
+    Note right of RateLimiter: Look up user_strategy[user_id]
+    RateLimiter->>Strategy: allow(user_id, now)
+    Strategy-->>RateLimiter: True / False
+    RateLimiter-->>Client: allow / reject

@@ -1,0 +1,97 @@
+# Snapshot vN
+# A snapshot includes everything you need to fully rebuild the hierarchical token bucket tree on the SR node.
+root_rate = 12,000 tokens/s
+priority_rates = {P0: 5000, P1: 3000, P2: 2000, P3: 2000}
+
+tenant_rates = {
+    tenantA: 120,
+    tenantB: 95,
+    tenantC: 200,
+    ...
+}
+tenant_burst = { tenantA: 600, tenantB: 450, ... }
+
+# A Delta is Only the small part of the config that changed since vN.
+tenant_rates = {
+    tenantA: +10              # increased from 120 to 130
+    tenantD: 50               # newly active tenant
+}
+priority_rates = {
+    P1: -300                  # decreased by 300
+}
+root_rate = no change
+tenantB: no change
+tenantC: no change
+
+# Version negotiation pattern used in large distributed systems
+# (Meta config platform, Envoy xDS, K8s, Redis client configs, etc.).
+
+# How to main "clock sync"?
+# We use logical versioning.
+# Clock synchronization mechanism = logical epochs.
+# Epochs act as a Lamport-clock, which only tracks ordering.
+# In another word, Lamport clocks let distributed nodes converge to a
+# consistent order without wall-clock synchronization.
+#
+# Causality: “New config happens after old config”
+# Causality is "How Lamport clocks differ from vector clocks"
+#
+# The monotonic epoch ensures:
+# If SR applies epoch=43, it will never apply 42 or 41 afterwards,
+# because 41 < 43 in the logical order.
+#  Whenever a new quota is computed, the allocator increments the epoch, guaranteeing every SR agent can compare:
+#•	Is this config newer? (epoch increases)
+#•	Should I apply it? (only if epoch is strictly greater)
+# This gives us causality, monotonicity, and eventual convergence without needing synchronized clocks or NTP.
+#
+# Rule:
+# - Control plane maintains a monotonically increasing epoch.
+# - SR applies a config iff new_epoch > current_epoch.
+#
+# no wall-clock synchronization between SR and control plane.
+# No NTP, no precise timestamps, no clock requirements.
+#
+# Normally, in global rate limiting:
+# 	•	The control plane is the only writer of quota configs
+# 	•	Clients only read and enforce
+# 	•	Config updates are strictly serialized
+#
+# In a single-writer architecture, one allocator computing quotas and pushing them
+# to SR — there is no concurrent writes, so Lamport-style epochs are enough.
+# But if we move to multi-writer architectures, such as multi-region allocators,
+# replicated token buckets, CRDT-based counters, or gossip-based rate limiters -
+# we now have concurrent updates to shared state. In those cases, we must detect concurrency and merge correctly.
+#
+# 1. Vector clock.
+# Exceptions where vector clock (VC) may be required:
+# Scenario A — Multi-region, partially partitioned allocators (sharded control plane)
+# Scenario B — Distributed rate limiter with multiple writers updating shared counters
+# Scenario C — Token bucket replication for HA (active-active buckets)
+# Scenario D — CRDT-based or Dynamo-style distributed rate limiting
+#
+# VC is used in detecting concurrent updates in distributed shared state.
+# Used in: Dynamo, Riak, Cassandra (older), Akka
+# When to use:
+# Multi-writer replication with conflict detection.
+#
+# 2. Version Vectors / Dotted Version Vectors (DVV)
+#  When to use:
+# Large-scale CRDT counters or sets in rate limiting.
+# 3. Hybrid Logical Clocks (HLC)
+# Used in:
+# 	•	CockroachDB
+# 	•	TiDB
+# 	•	Yugabyte
+# 	•	Spanner-like systems (in weaker form)
+# When to use:
+# You want causality tracking but with physical-time correlation (e.g., ordering + approximate real time).
+# Good for audit logs, global timelines, not needed for simple rate limits.
+# 4. TrueTime / Google Spanner
+# Used for:
+# 	•	External consistency
+# 	•	Serialized transactions
+# 5. CRDT counters and semilattices
+# Used to maintain distributed rate-limit counters without central coordination
+#  When to use:
+# Highly-available replicated rate limits (API gateways, multi-DC).
+# 6. Quorum-based timestamp ordering

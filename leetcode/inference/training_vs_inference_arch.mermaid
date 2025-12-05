@@ -1,0 +1,72 @@
+flowchart TB
+
+    subgraph TRAINING["Distributed Training Architecture"]
+        direction LR
+
+        subgraph TWorkers["Training Workers (GPU Nodes)"]
+            TP1[Worker/GPU 1]
+            TP2[Worker/GPU 2]
+            TP3[Worker/GPU 3]
+            TP4[Worker/GPU 4]
+        end
+
+        TBatches[(Mini-batches of training data)]
+
+        TBatches --> TP1
+        TBatches --> TP2
+        TBatches --> TP3
+        TBatches --> TP4
+
+        subgraph AllReduce["Synchronized Communication Layer"]
+            SyncOp[(Gradient AllReduce - Optimizer State Sync - Pipeline Stage Barriers)]
+        end
+
+        TP1 --> SyncOp
+        TP2 --> SyncOp
+        TP3 --> SyncOp
+        TP4 --> SyncOp
+
+        SyncOp --> TP1
+        SyncOp --> TP2
+        SyncOp --> TP3
+        SyncOp --> TP4
+
+        SyncOp --> Controller[Central Trainer/Orchestrator]
+    end
+
+    subgraph INFERENCE["LLM Inference Architecture"]
+        direction LR
+
+        Clients[Incoming User Requests]
+
+        Clients --> Router[Global Router - Region & Node Selection]
+
+        subgraph Region["Region A"]
+            direction LR
+            Node1[Node 1]
+            Node2[Node 2]
+
+            Router --> Node1
+            Router --> Node2
+
+            subgraph GPU1["Node 1 GPUs"]
+                G1a[GPU 1 - Per-GPU Scheduler - Continuous Batching]
+                G1b[GPU 2 - Per-GPU Scheduler - Continuous Batching]
+            end
+
+            subgraph GPU2["Node 2 GPUs"]
+                G2a[GPU 1 - Per-GPU Scheduler]
+                G2b[GPU 2 - Per-GPU Scheduler]
+            end
+
+            Node1 --> G1a
+            Node1 --> G1b
+            Node2 --> G2a
+            Node2 --> G2b
+        end
+
+        G1a --> Output[Streaming Output]
+        G1b --> Output
+        G2a --> Output
+        G2b --> Output
+    end

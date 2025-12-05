@@ -1,0 +1,81 @@
+flowchart LR
+
+%% ============================
+%% ReduceByKey shuffle path
+%% ============================
+subgraph RB[Shuffle for reduceByKey]
+direction LR
+
+RB_Src[Parent RDD
+partitions on executors]
+RB_Map[Map stage
+apply user function -> key, value]
+RB_Comb[Map-side combiner
+local aggregate by key]
+RB_Part[Partitioner
+hash:key  -> partition id 0..N-1]
+RB_ShufW[Shuffle write
+buckets map_i_part_j
+spill/compress to local disk]
+RB_ShufR[Shuffle read
+fetch all map_i_part_p
+for each reducer partition p]
+RB_Group[Group by key
+within each partition p]
+RB_Red[Reduce step
+apply reduceByKey f:v1, v2]
+RB_Out[Result RDD
+hash/range-partitioned by key]
+
+RB_Src --> RB_Map --> RB_Comb --> RB_Part --> RB_ShufW
+RB_ShufW --> RB_ShufR --> RB_Group --> RB_Red --> RB_Out
+end
+
+
+%% ============================
+%% Join shuffle path
+%% ============================
+subgraph J[Shuffle for join:left RDD, right RDD]
+direction LR
+
+%% Left side
+J_L_Src[Left RDD
+e.g. K, V]
+J_L_Map[Left map stage
+preserve key K]
+J_L_Part[Left partitioner
+hash:K -> partition id]
+J_L_ShufW[Left shuffle write
+buckets map_i_part_j]
+
+%% Right side
+J_R_Src[Right RDD
+e.g. K, W]
+J_R_Map[Right map stage
+preserve key K]
+J_R_Part[Right partitioner
+same function and N as left]
+J_R_ShufW[Right shuffle write
+buckets map_i_part_j]
+
+%% Shuffle read + join
+J_L_ShufR[Left shuffle read
+for partition p: all left map_i_part_p]
+J_R_ShufR[Right shuffle read
+for partition p: all right map_i_part_p]
+J_Join[Per-partition join
+hash join or sort-merge join on K]
+J_Out[Joined RDD partitions
+K -> V, W]
+
+%% Edges (left branch)
+J_L_Src --> J_L_Map --> J_L_Part --> J_L_ShufW --> J_L_ShufR
+
+%% Edges (right branch)
+J_R_Src --> J_R_Map --> J_R_Part --> J_R_ShufW --> J_R_ShufR
+
+%% Join fan-in
+J_L_ShufR --> J_Join
+J_R_ShufR --> J_Join
+J_Join --> J_Out
+end

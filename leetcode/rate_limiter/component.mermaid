@@ -1,0 +1,36 @@
+flowchart LR
+subgraph Hosts
+subgraph Host1
+SR1[SR Agent
+Hierarchical Token Buckets]
+end
+subgraph HostN
+SRN[SR Agent
+Hierarchical Token Buckets]
+end
+end
+
+    subgraph ControlPlane
+        PC[Policy Config
+        - weights, priorities]
+        MS[Metrics Store
+        usage, latency, errors]
+        FA[Fair-Share Allocator
+        Weighted Max-Min + Feedback]
+    end
+
+    BE[Backend Service]
+
+    PC --> FA
+    SR1 -->|demand, usage, local p99| MS
+    SRN -->|demand, usage, local p99| MS
+    BE -->|latency, errors| MS
+    MS --> FA
+
+    FA -->|per-tenant quotas
+    Q_i + hierarchy| SR1
+    FA -->|per-tenant quotas
+    Q_i + hierarchy| SRN
+
+    SR1 -->|allowed RPCs| BE
+    SRN -->|allowed RPCs| BE

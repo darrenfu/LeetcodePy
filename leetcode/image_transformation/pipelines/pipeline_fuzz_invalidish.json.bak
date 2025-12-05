@@ -1,0 +1,62 @@
+[
+  {
+    "transform": "flip_diagonally",
+    "args": []
+  },
+  {
+    "transform": "SCALE",
+    "args": [
+      0.75
+    ]
+  },
+  {
+    "transform": "",
+    "args": []
+  },
+  {
+    "transform": null,
+    "args": []
+  },
+  {
+    "transform": 123,
+    "args": []
+  },
+  {
+    "transform": "grayscale"
+  },
+  {
+    "args": [
+      0.5
+    ]
+  },
+  {
+    "transform": "blur",
+    "args": [
+      2
+    ],
+    "extra": true
+  },
+  {
+    "transform": "scale",
+    "args": [
+      "0.5"
+    ]
+  },
+  {
+    "transform": "blur",
+    "args": [
+      "strong"
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": [
+      45,
+      "extra"
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": null
+  }
+]

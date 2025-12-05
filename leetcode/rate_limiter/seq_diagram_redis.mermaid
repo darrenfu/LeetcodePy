@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client
+    participant RateLimiter
+    participant Strategy as RedisTokenBucketStrategy
+    participant Redis
+
+    Client->>RateLimiter: allow(user_id, now)
+    Note right of RateLimiter: user_strategy[user_id] = "redis_token_bucket"
+    RateLimiter->>Strategy: allow(user_id, now)
+
+    Note right of Strategy: load capacity, refill_rate\nfrom in-memory configs
+    Strategy->>Redis: EVAL Lua (key, capacity, refill_rate, now)
+    Redis-->>Strategy: 1 (allowed) / 0 (rejected)
+
+    Strategy-->>RateLimiter: True / False
+    RateLimiter-->>Client: allow / reject

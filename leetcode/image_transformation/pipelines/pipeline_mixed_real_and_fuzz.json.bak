@@ -1,0 +1,44 @@
+[
+  {
+    "transform": "scale",
+    "args": [
+      0.8
+    ]
+  },
+  {
+    "transform": "flip_horizontally",
+    "args": []
+  },
+  {
+    "transform": "rotate",
+    "args": [
+      5
+    ]
+  },
+  {
+    "transform": "blur",
+    "args": [
+      0.5
+    ]
+  },
+  {
+    "transform": "scale",
+    "args": []
+  },
+  {
+    "transform": "scale",
+    "args": [
+      "1.0"
+    ]
+  },
+  {
+    "transform": "grayscale",
+    "args": [
+      "unexpected"
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": null
+  }
+]

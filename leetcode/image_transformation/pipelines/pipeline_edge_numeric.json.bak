@@ -1,0 +1,50 @@
+[
+  {
+    "transform": "scale",
+    "args": [
+      0
+    ]
+  },
+  {
+    "transform": "scale",
+    "args": [
+      -1
+    ]
+  },
+  {
+    "transform": "scale",
+    "args": [
+      10
+    ]
+  },
+  {
+    "transform": "blur",
+    "args": [
+      0
+    ]
+  },
+  {
+    "transform": "blur",
+    "args": [
+      -5
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": [
+      0
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": [
+      360
+    ]
+  },
+  {
+    "transform": "rotate",
+    "args": [
+      -45
+    ]
+  }
+]

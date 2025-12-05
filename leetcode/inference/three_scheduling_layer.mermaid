@@ -1,0 +1,58 @@
+flowchart LR
+    subgraph Clients
+        C1[Client A]
+        C2[Client B]
+    end
+
+    C1 --> GR[Global Router - Cluster Level]
+    C2 --> GR
+
+    subgraph Region_1
+        subgraph Node_1
+            NS1[Node Scheduler - GPU placement]
+            GR --> NS1
+
+            subgraph GPU_1
+                GS11[Per-GPU Scheduler - continuous batching]
+                PA11[PagedAttention - KV blocks]
+                GS11 --> PA11
+            end
+
+            subgraph GPU_2
+                GS12[Per-GPU Scheduler]
+                PA12[PagedAttention]
+                GS12 --> PA12
+            end
+
+            NS1 --> GS11
+            NS1 --> GS12
+        end
+
+        subgraph Node_2
+            NS2[Node Scheduler]
+            GR --> NS2
+
+            subgraph GPU_3
+                GS21[Per-GPU Scheduler]
+                PA21[PagedAttention]
+                GS21 --> PA21
+            end
+
+            NS2 --> GS21
+        end
+    end
+
+    subgraph Region_2
+        subgraph Node_3
+            NS3[Node Scheduler]
+            GR --> NS3
+
+            subgraph GPU_4
+                GS31[Per-GPU Scheduler]
+                PA31[PagedAttention]
+                GS31 --> PA31
+            end
+
+            NS3 --> GS31
+        end
+    end
