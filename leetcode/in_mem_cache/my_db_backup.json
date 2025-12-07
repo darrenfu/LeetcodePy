@@ -1,0 +1,43 @@
+{
+  "tables": [
+    {
+      "rows": [
+        {
+          "row_id": 0,
+          "data": {
+            "name": "Alice",
+            "age": 30
+          },
+          "create_at": 1765144595.171967,
+          "ttl": 1.5
+        }
+      ],
+      "name": "users",
+      "next_row_id": 2
+    },
+    {
+      "rows": [
+        {
+          "row_id": 0,
+          "data": {
+            "name": "Laptop",
+            "price": 999
+          },
+          "create_at": 1765144595.172642,
+          "ttl": null
+        },
+        {
+          "row_id": 1,
+          "data": {
+            "name": "Mouse",
+            "price": 29
+          },
+          "create_at": 1765144595.1726432,
+          "ttl": null
+        }
+      ],
+      "name": "products",
+      "next_row_id": 2
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "tables": {
+    "products": {
+      "name": "products",
+      "rows": {
+        "1": {
+          "data": {
+            "name": "Laptop",
+            "price": 999
+          },
+          "created_at": 1765142788.081599,
+          "ttl": null
+        },
+        "2": {
+          "data": {
+            "name": "Mouse",
+            "price": 29
+          },
+          "created_at": 1765142788.081606,
+          "ttl": null
+        }
+      },
+      "next_id": 3
+    }
+  }
+}

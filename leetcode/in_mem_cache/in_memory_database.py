@@ -5,6 +5,7 @@ relational feel with tables, rows, and predicates for filtering.
 """
 from __future__ import annotations
 
+import json
 import time
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, Iterable, List, Optional
@@ -21,6 +22,23 @@ class Row:
             return False
         now = now or time.time()
         return now - self.created_at >= self.ttl
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize row to dictionary for backup."""
+        return {
+            "data": self.data,
+            "created_at": self.created_at,
+            "ttl": self.ttl
+        }
+
+    @classmethod
+    def from_dict(cls, d: Dict[str, Any]) -> Row:
+        """Deserialize row from dictionary."""
+        return cls(
+            data=d["data"],
+            created_at=d["created_at"],
+            ttl=d.get("ttl")
+        )
 
 
 class Table:
@@ -84,6 +102,22 @@ class Table:
         for row_id in expired_keys:
             del self.rows[row_id]
 
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize table to dictionary for backup."""
+        return {
+            "name": self.name,
+            "rows": {str(row_id): row.to_dict() for row_id, row in self.rows.items()},
+            "next_id": self._next_id
+        }
+
+    @classmethod
+    def from_dict(cls, d: Dict[str, Any]) -> Table:
+        """Deserialize table from dictionary."""
+        table = cls(name=d["name"])
+        table.rows = {int(row_id): Row.from_dict(row_data) for row_id, row_data in d["rows"].items()}
+        table._next_id = d["next_id"]
+        return table
+
 
 class InMemoryDatabase:
     """A minimal in-memory database with tables, CRUD, filtering, and row TTL."""
@@ -129,6 +163,28 @@ class InMemoryDatabase:
         return self.tables[name]
 
 
+class DurableInMemoryDatabase(InMemoryDatabase):
+    """Extended database with backup/restore durability features."""
+
+    def backup(self, filepath: str) -> None:
+        """Backup the entire database to a JSON file."""
+        backup_data = {
+            "tables": {name: table.to_dict() for name, table in self.tables.items()}
+        }
+        with open(filepath, 'w') as f:
+            json.dump(backup_data, f, indent=2)
+
+    def restore(self, filepath: str) -> None:
+        """Restore the database from a JSON backup file."""
+        with open(filepath, 'r') as f:
+            backup_data = json.load(f)
+
+        self.tables = {
+            name: Table.from_dict(table_data)
+            for name, table_data in backup_data["tables"].items()
+        }
+
+
 if __name__ == "__main__":
     db = InMemoryDatabase()
     db.create_table("users")
@@ -145,3 +201,21 @@ if __name__ == "__main__":
     print("After update:", db.get("users", bob_id))
     db.delete("users", bob_id)
     print("After delete:", db.scan("users"))
+
+    # Test backup/restore functionality
+    print("\n--- Testing Backup/Restore ---")
+    db2 = DurableInMemoryDatabase()
+    db2.create_table("products")
+    p1 = db2.insert("products", {"name": "Laptop", "price": 999})
+    p2 = db2.insert("products", {"name": "Mouse", "price": 29})
+    print("Before backup:", db2.scan("products"))
+
+    # Backup to file
+    db2.backup("db_backup.json")
+    print("Database backed up to db_backup.json")
+
+    # Create new database and restore
+    db3 = DurableInMemoryDatabase()
+    db3.restore("db_backup.json")
+    print("After restore:", db3.scan("products"))
+    print("Verify data integrity:", db3.get("products", p1))
