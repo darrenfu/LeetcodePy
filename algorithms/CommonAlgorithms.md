@@ -143,6 +143,10 @@ Here, I summarized top common algorithms to deal with classic leetcode problems.
     * [LintCode 394. Coins in a Line](https://www.lintcode.com/problem/coins-in-a-line/description)
     * [LintCode 395. Coins in a Line II](https://www.lintcode.com/problem/coins-in-a-line-ii/description)
 
+### Design
+1. In-Memory Systems / Data Structure Design
+    * [Implement a Searchable Logger Pipeline (Rippling)](../leetcode/design/searchable_logger_pipeline/README.md)
+
 ### Misc  
 1. Interval Scheduling  
    **Solution**: Greedy / Boundary Counting
