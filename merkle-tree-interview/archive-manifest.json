@@ -1,0 +1,46 @@
+{
+  "archive_date": "2026-10-11",
+  "validation": "14 tests passed; trie delta is an untested integration draft",
+  "files": [
+    {
+      "name": "session-summary.md",
+      "bytes": 13604,
+      "sha256": "db28069a4f84ba492598d9de3f4730046cec0bca15b9e9ba4d0b11375f08a0b5"
+    },
+    {
+      "name": "prachub-answer.md",
+      "bytes": 13986,
+      "sha256": "c0129f8cafd9956d29c7d12d1ddcdb6ddc499bcdceeae6c0c726be8f0f664b7a"
+    },
+    {
+      "name": "merkle_tree.py",
+      "bytes": 3134,
+      "sha256": "160e362439b53d9d24aa72cf3267126e7ad549fde17a6fccdcf158c62f559a07"
+    },
+    {
+      "name": "test_merkle_tree.py",
+      "bytes": 5041,
+      "sha256": "f20c4da404c65d1aa25592043c89c3feca7b281845c63307cf5d2d65be231804"
+    },
+    {
+      "name": "merkle_index.py",
+      "bytes": 8365,
+      "sha256": "6160bebacc284833da94dc232e84e0a2f6f20e54edb67d352f09091a6b39e2f2"
+    },
+    {
+      "name": "test_merkle_index.py",
+      "bytes": 5840,
+      "sha256": "9cfff2ab5fbb44079bd2b05591ba19e5be0fd3077a5cb6fbdb36cdea65606f3e"
+    },
+    {
+      "name": "merkle_index_usage.md",
+      "bytes": 2900,
+      "sha256": "ab30cff0cc4b20a9ae93817e881cbfd3e8c5bb290062b404ef90885f1f62c628"
+    },
+    {
+      "name": "merkle_trie_delta.md",
+      "bytes": 5019,
+      "sha256": "dc33ba1bcf74f40055838454a47d4aa268fbaaa72c322725c2d42342be12c9d4"
+    }
+  ]
+}
